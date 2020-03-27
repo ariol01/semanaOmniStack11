@@ -1,9 +1,9 @@
 const express = require('express');
-
+const routes = require('./routes');
 // armazena minha aplicacao 
 const app = express();
 
-app.use(express.json());
+app.use(routes);
 
 //existem requisoções http
 // GET, POST, PUT, DELETE
@@ -13,17 +13,6 @@ app.use(express.json());
 //route params = serve para acessar algum recurso
 // request body = corpo da requisição alterar ou criar recursos 
 
-app.get('/', (request, response)=>{
-
-const body = request.body;
-console.log(body);
-
-response.json({
-  evento:'semana omnistack 11', 
-  aluno: 'ariel Veras'
-});
-
-});
 
 // qando chamar a url abre nessa porta a aplicacao
 app.listen(3333);
